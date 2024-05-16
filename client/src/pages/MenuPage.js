@@ -8,7 +8,7 @@ const Menu = () => {
 
   useEffect(() => {
     const fetchMeals = async () => {
-      const response = await fetch('http://127.0.0.1:5000/api/meals');
+      const response = await fetch('https://quickbuthealthy-backend.onrender.com/api/meals');
       const data = await response.json();
       setMeals(data);
     };
@@ -34,7 +34,7 @@ const Menu = () => {
             <div className="meal-details">
               <h2>{meal.name}</h2>
               <p>{meal.description}</p>
-              <p>Price: ₹:{meal.price}</p>
+              <p>Price: ₹{meal.price}</p>
             </div>
           </div>
         ))}
