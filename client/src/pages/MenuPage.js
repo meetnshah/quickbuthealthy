@@ -1,49 +1,47 @@
-import React from 'react';
-import { Container, Row, Col, Card } from 'react-bootstrap';
-// Import any additional components you might need
+import React, { useState, useEffect } from 'react';
+import './MenuPage.css';
+import Modal from './Modal';
 
-const MenuPage = () => {
-  const categories = {
-    starters: [{ title: "Paneer Tikka Masala", description: "Spiced paneer in tomato gravy", image: "path-to-image-1.jpg" },
-    { title: "Daal Makhani", description: "Creamy black lentils", image: "/path-to-image-2.jpg" },
-    { title: "Chana Masala", description: "Chickpeas in a spicy sauce", image: "/path-to-image-3.jpg" },
-    { title: "Navratna Korma", description: "Mix Veggies in a cashew based curry", image: "/path-to-image-4.jpg" },
-      
-      // More dishes...
-    ],
-    mains: [
-      { title: "Paneer Tikka Masala", description: "Spiced paneer in tomato gravy", image: "path-to-image-1.jpg" },
-      { title: "Daal Makhani", description: "Creamy black lentils", image: "/path-to-image-2.jpg" },
-      { title: "Chana Masala", description: "Chickpeas in a spicy sauce", image: "/path-to-image-3.jpg" },
-      { title: "Navratna Korma", description: "Mix Veggies in a cashew based curry", image: "/path-to-image-4.jpg" },
-    ],
-    // More categories...
+const Menu = () => {
+  const [meals, setMeals] = useState([]);
+  const [selectedMeal, setSelectedMeal] = useState(null);
+
+  useEffect(() => {
+    const fetchMeals = async () => {
+      const response = await fetch('http://127.0.0.1:5000/api/meals');
+      const data = await response.json();
+      setMeals(data);
+    };
+
+    fetchMeals();
+  }, []);
+
+  const handleMealClick = (meal) => {
+    setSelectedMeal(meal);
+  };
+
+  const handleCloseModal = () => {
+    setSelectedMeal(null);
   };
 
   return (
-    <Container>
-      <h1 className="mt-4">Our Menu</h1>
-      {Object.keys(categories).map((category) => (
-        <div key={category}>
-          <h2>{category.charAt(0).toUpperCase() + category.slice(1)}</h2>
-          <Row>
-            {categories[category].map((dish, index) => (
-              <Col md={4} key={index} className="mb-4">
-                <Card>
-                  <Card.Img variant="top" src={dish.image} />
-                  <Card.Body>
-                    <Card.Title>{dish.name}</Card.Title>
-                    <Card.Text>{dish.description}</Card.Text>
-                    {/* Add more details like price, ingredients, etc */}
-                  </Card.Body>
-                </Card>
-              </Col>
-            ))}
-          </Row>
-        </div>
-      ))}
-    </Container>
+    <div className="menu">
+      <h1>Our Menu</h1>
+      <div className="meal-list">
+        {meals.map((meal) => (
+          <div className="meal-item" key={meal.id} onClick={() => handleMealClick(meal)}>
+            <img src={meal.image} alt={meal.name} className="meal-image" />
+            <div className="meal-details">
+              <h2>{meal.name}</h2>
+              <p>{meal.description}</p>
+              <p>Price: ₹:{meal.price}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      {selectedMeal && <Modal meal={selectedMeal} onClose={handleCloseModal} />}
+    </div>
   );
 };
 
-export default MenuPage;
+export default Menu;

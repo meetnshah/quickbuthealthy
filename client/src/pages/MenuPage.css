@@ -1,8 +1,44 @@
-/* MenuPage.css */
-.card-img-top {
-    height: 200px;
-    object-fit: cover;
-  }
-  
-  /* Add more styles to suit your design preferences */
-  
+/* client/src/styles/Menu.css */
+.menu {
+  text-align: center;
+  padding: 2rem;
+  background-color: #f9f9f9;
+}
+
+.meal-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.meal-item {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  text-align: left;
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+}
+
+.meal-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.meal-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px 10px 0 0;
+  transition: transform 0.3s;
+}
+
+.meal-item:hover .meal-image {
+  transform: scale(1.1);
+}
+
+.meal-details {
+  padding: 1rem;
+}
