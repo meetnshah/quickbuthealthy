@@ -5,7 +5,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.7); /* Darken the overlay */
+  background-color: var(--modal-overlay-color);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,7 +13,8 @@
 }
 
 .modal-content {
-  background-color: #fff; /* Ensure modal content is white */
+  background-color: var(--modal-background-color);
+  color: var(--modal-text-color);
   padding: 2rem;
   border-radius: 10px;
   width: 50%;
@@ -32,6 +33,7 @@
   border: none;
   font-size: 1.5rem;
   cursor: pointer;
+  color: var(--secondary-color);
 }
 
 .details {
@@ -43,7 +45,6 @@ details summary {
   font-weight: bold;
 }
 
-/* Add keyframes for fadeIn animation */
 @keyframes fadeIn {
   from {
     opacity: 0;

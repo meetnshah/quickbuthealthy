@@ -2,7 +2,7 @@
 .menu {
   text-align: center;
   padding: 2rem;
-  background-color: #f9f9f9;
+  background: linear-gradient(to right, #f9f9f9, #e0e0e0);
 }
 
 .meal-list {
@@ -13,7 +13,7 @@
 }
 
 .meal-item {
-  background-color: white;
+  background-color: var(--modal-background-color);
   padding: 1rem;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);

@@ -1,6 +1,6 @@
 /* Hero Section with Enhanced Background and Styling */
 .hero-section {
-  /* background: url('path-to-hero-image.jpg') no-repeat center center; */
+  background: url('path-to-hero-image.jpg') no-repeat center center;
   background-size: cover;
   color: white;
   padding: 120px 20px;
@@ -14,13 +14,17 @@ body {
 }
 
 /* Typography Color Adjustments */
-h1, h2, h3, h4, h5, h6, .text-blue {
-  color: #0047AB; /* Deep blue for text, inspired by the Ashoka Chakra color */
+h1, h2, h3, h4, h5, h6, .text-primary {
+  color: #0d9488; /* Cool teal color */
+}
+
+.text-secondary {
+  color: #64748b; /* Muted blue-gray */
 }
 
 /* Button Styling for Vibrant Visuals */
 button {
-  background-color: #138808; /* Green from the flag for primary action buttons */
+  background-color: #0d9488; /* Teal color for primary action buttons */
   color: white;
   border-radius: 20px; /* Rounded buttons for a modern look */
   padding: 10px 30px;
@@ -28,7 +32,7 @@ button {
 }
 
 button:hover {
-  background-color: #0F750C; /* Slightly darker green on hover */
+  background-color: #0a7d72; /* Slightly darker teal on hover */
 }
 
 /* Featured Dishes and Cards Enhancements */
@@ -44,7 +48,7 @@ button:hover {
 
 /* About Us and FAQ Section Styling */
 .about-us, .faq-section {
-  background-color: #E0E0E0; /* Light grey for subtle distinction */
+  background-color: #f8fafc; /* Light gray for subtle distinction */
   padding: 40px 20px; /* Ample padding for content breathing space */
   margin: 20px 0; /* Margin for separation between sections */
   border-radius: 10px; /* Rounded corners for modern card appearance */
@@ -52,7 +56,7 @@ button:hover {
 
 /* Custom Styles for Links and Icons in FAQ and About Us */
 a, .MuiSvgIcon-root {
-  color: #0047AB; /* Deep blue for icons and links */
+  color: #0d9488; /* Teal color for icons and links */
 }
 
 /* Responsive Adjustments */

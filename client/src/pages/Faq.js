@@ -10,10 +10,7 @@ const questionsAnswers = [
     question: "How are Quick but Healthy meals healthy?",
     answer: "Our meals are crafted with fresh ingredients and without preservatives, ensuring you get a balanced meal. The retort technology helps maintain the natural nutritional value of the food."
   },
-  {
-    question: "Are Quick but Healthy meals affordable?",
-    answer: "Absolutely! We’ve tailored our pricing to be budget-friendly for students, working professionals, and anyone looking for healthy eating options that won’t break the bank."
-  },
+
   {
     question: "How do I prepare a Quick but Healthy meal?",
     answer: "Our meals are designed for utmost convenience. Simply reheat them in a microwave, stove, or even in hot water, and you’re ready to enjoy a delicious, healthy meal in no time."
