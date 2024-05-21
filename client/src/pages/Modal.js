@@ -1,4 +1,3 @@
-// client/src/components/Modal.js
 import React from 'react';
 import './Modal.css';
 
@@ -6,18 +5,21 @@ const Modal = ({ meal, onClose }) => {
   return (
     <div className="modal-overlay" onClick={onClose}>
       <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-        <button className="close-button" onClick={onClose}>X</button>
-        <h2>{meal.name}</h2>
-        <p><strong>Recommended Side:</strong> 8 Rotis</p>
-        <p>{meal.description}</p>
+        <button className="close-button" onClick={onClose}>&times;</button>
+        <h2 className="text-2xl font-bold mb-4 text-primary">{meal.name}</h2>
+        <div className="image-container">
+          <img src={meal.image} alt={meal.name} className="modal-image" />
+        </div>
+        {/* <p className="mb-4"><strong>Recommended Side:</strong> 8 Rotis</p> */}
+        <p className="mb-4">{meal.description}</p>
         <div className="dropdowns">
-          <details>
-            <summary>Serving Size</summary>
-            <p>{meal.serving_size}</p>
+          <details className="mb-4">
+            <summary className="cursor-pointer font-bold text-primary">Serving Size</summary>
+            <p className="mt-2">{meal.serving_size}</p>
           </details>
-          <details>
-            <summary>Nutrition</summary>
-            <p>Energy: {meal.energy} kcal</p>
+          <details className="mb-4">
+            <summary className="cursor-pointer font-bold text-primary">Nutrition</summary>
+            <p className="mt-2">Energy: {meal.energy} kcal</p>
             <p>Protein: {meal.protein} g</p>
             <p>Carbohydrates: {meal.carbohydrates} g</p>
             <p>Total Sugars: {meal.total_sugars} g</p>
@@ -28,13 +30,13 @@ const Modal = ({ meal, onClose }) => {
             <p>Cholesterol: {meal.cholesterol} mg</p>
             <p>Sodium: {meal.sodium} mg</p>
           </details>
-          <details>
-            <summary>Ingredients</summary>
-            <p>{meal.ingredients}</p>
+          <details className="mb-4">
+            <summary className="cursor-pointer font-bold text-primary">Ingredients</summary>
+            <p className="mt-2">{meal.ingredients}</p>
           </details>
           <details>
-            <summary>How to Prepare</summary>
-            <p>{meal.how_to_cook}</p>
+            <summary className="cursor-pointer font-bold text-primary">How to Prepare</summary>
+            <p className="mt-2">{meal.how_to_cook}</p>
           </details>
         </div>
       </div>

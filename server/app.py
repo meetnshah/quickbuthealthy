@@ -168,6 +168,7 @@ meals = [
         "image": "paneer-tikka.jpg",
         "how_to_cook": "Place the pouch in a pot of boiling water for 5 mins, remove contents from the pouch and heat in a pan till warm. Microwave: Remove contents from the pouch and heat in a microwave-safe dish for about 3 mins on high.",
         "pack_volume": "300g"
+        "serving_size": "2 servings (150g each)",
     }
 ]
 
