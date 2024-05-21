@@ -168,7 +168,6 @@ meals = [
         "image": "paneer-tikka.jpg",
         "how_to_cook": "Place the pouch in a pot of boiling water for 5 mins, remove contents from the pouch and heat in a pan till warm. Microwave: Remove contents from the pouch and heat in a microwave-safe dish for about 3 mins on high.",
         "pack_volume": "300g"
-        "serving_size": "2 servings (150g each)",
     }
 ]
 
@@ -177,4 +176,5 @@ def get_meals():
     return jsonify(meals)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port)
