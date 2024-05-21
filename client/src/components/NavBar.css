@@ -1,28 +1,28 @@
 .navBar {
-  background-color: #0d9488; /* Cool teal color */
+  background-color: #0d9488 !important; /* Cool teal color */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .navTitle {
   flex-grow: 1;
   text-decoration: none;
-  color: white;
+  color: white !important;
   font-weight: bold;
 }
 
 .navLinks button {
   margin-right: 10px;
-  color: white;
+  color: white !important;
 }
 
 .navLinks .signUpButton {
-  background-color: #ffcc00;
-  color: black;
+  background-color: #ffcc00 !important;
+  color: black !important;
   border-radius: 20px;
 }
 
 .navLinks .signUpButton:hover {
-  background-color: #e6b800;
+  background-color: #e6b800 !important;
 }
 
 .MuiDrawer-paper {

@@ -39,7 +39,7 @@ const NavBar = () => {
   );
 
   return (
-    <AppBar position="static" color="primary" className="navBar">
+    <AppBar position="static" className="navBar">
       <Toolbar>
         {isMobile && (
           <IconButton edge="start" color="inherit" aria-label="menu" onClick={handleDrawerToggle}>
